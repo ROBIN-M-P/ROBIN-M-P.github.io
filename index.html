@@ -148,13 +148,15 @@
         <section id="projects" class="py-20 section-fade-in">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-12 text-center">My Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1: Zomato Clone -->
+                <!-- Project Card 1: Zomato Clone with DevOps -->
                 <div class="bg-gray-800 rounded-xl shadow-lg p-6">
                     <h3 class="text-2xl font-semibold text-white mb-2">Zomato Clone with DevOps</h3>
                     <p class="text-gray-400 text-sm mb-4">A full-stack application hosted on AWS with a complete CI/CD pipeline.</p>
-                    <p class="text-gray-300 leading-relaxed">
-                        Containerized with Docker and automated deployments using GitHub Actions and Jenkins. The application is hosted on an AWS EC2 instance.
-                    </p>
+                    <div class="relative w-full h-32 bg-gray-700 rounded-lg overflow-hidden flex items-center justify-center mb-4">
+                        <div id="project1-animation" class="text-center text-gray-400">
+                            Click to start CI/CD simulation.
+                        </div>
+                    </div>
                     <div class="mt-4">
                         <button class="toggle-details bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors" data-project-id="project1">
                             More Details
@@ -174,9 +176,12 @@
                 <div class="bg-gray-800 rounded-xl shadow-lg p-6">
                     <h3 class="text-2xl font-semibold text-white mb-2">Automated Retinal Disease Detection</h3>
                     <p class="text-gray-400 text-sm mb-4">An AI/ML project for diagnosing multiple retinal diseases.</p>
-                    <p class="text-gray-300 leading-relaxed">
-                        A deep learning system developed to classify retinal diseases with a high accuracy of 92.37%, utilizing the Gemini 1.5 API.
-                    </p>
+                    <div class="relative w-full h-32 bg-gray-700 rounded-lg flex flex-col items-center justify-center mb-4">
+                        <p id="project2-diagnosis-text" class="text-lg text-gray-300">Awaiting image scan...</p>
+                        <button id="project2-diagnose-btn" class="mt-2 bg-green-500 text-white font-semibold py-2 px-6 rounded-full hover:bg-green-600 transition-colors">
+                            Scan Retina
+                        </button>
+                    </div>
                     <div class="mt-4">
                         <button class="toggle-details bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors" data-project-id="project2">
                             More Details
@@ -196,9 +201,11 @@
                 <div class="bg-gray-800 rounded-xl shadow-lg p-6">
                     <h3 class="text-2xl font-semibold text-white mb-2">Serverless Image Processing</h3>
                     <p class="text-gray-400 text-sm mb-4">A cloud-based image pipeline for automatic optimization.</p>
-                    <p class="text-gray-300 leading-relaxed">
-                        Developed a serverless image processing pipeline on AWS using Lambda and S3, with Python functions for resizing and optimizing images.
-                    </p>
+                    <div class="relative w-full h-32 bg-gray-700 rounded-lg flex flex-col items-center justify-center mb-4">
+                        <div id="project3-flow" class="text-gray-300 text-center">
+                            S3 Upload <span class="text-sm block leading-none">-></span> Lambda <span class="text-sm block leading-none">-></span> Processed Image
+                        </div>
+                    </div>
                     <div class="mt-4">
                         <button class="toggle-details bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors" data-project-id="project3">
                             More Details
@@ -218,9 +225,14 @@
                 <div class="bg-gray-800 rounded-xl shadow-lg p-6">
                     <h3 class="text-2xl font-semibold text-white mb-2">Real-time Face Attribute Detection</h3>
                     <p class="text-gray-400 text-sm mb-4">An interface for detecting Emotion, Gender, Age, and Race.</p>
-                    <p class="text-gray-300 leading-relaxed">
-                        Created a real-time interface for detecting Emotion, Gender, Age, and Race using CNN and VGG models.
-                    </p>
+                    <div class="relative w-full h-32 bg-gray-700 rounded-lg flex flex-col items-center justify-center mb-4">
+                        <p id="project4-emoji" class="text-5xl mb-2">😐</p>
+                        <div class="space-x-2">
+                            <button class="project4-emoji-btn bg-gray-600 text-white px-3 py-1 rounded-full text-sm" data-emotion="happy">😊</button>
+                            <button class="project4-emoji-btn bg-gray-600 text-white px-3 py-1 rounded-full text-sm" data-emotion="sad">😔</button>
+                            <button class="project4-emoji-btn bg-gray-600 text-white px-3 py-1 rounded-full text-sm" data-emotion="angry">😡</button>
+                        </div>
+                    </div>
                     <div class="mt-4">
                         <button class="toggle-details bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors" data-project-id="project4">
                             More Details
@@ -240,9 +252,13 @@
                 <div class="bg-gray-800 rounded-xl shadow-lg p-6">
                     <h3 class="text-2xl font-semibold text-white mb-2">Phishing URL Analysis</h3>
                     <p class="text-gray-400 text-sm mb-4">A machine learning project to detect and analyze phishing URLs.</p>
-                    <p class="text-300 leading-relaxed">
-                        Built a phishing detection system using machine learning and analytics on URL patterns to protect users from malicious links.
-                    </p>
+                    <div class="relative w-full h-32 bg-gray-700 rounded-lg flex flex-col items-center justify-center space-y-2 mb-4">
+                        <input type="text" id="project5-url" placeholder="Enter URL to scan" class="w-11/12 p-2 rounded-md bg-gray-800 text-white placeholder-gray-400" />
+                        <button id="project5-scan-btn" class="bg-yellow-500 text-gray-900 font-semibold py-2 px-6 rounded-full hover:bg-yellow-600 transition-colors">
+                            Scan
+                        </button>
+                        <p id="project5-result" class="text-white mt-2"></p>
+                    </div>
                     <div class="mt-4">
                         <button class="toggle-details bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors" data-project-id="project5">
                             More Details
@@ -399,6 +415,85 @@
             document.querySelectorAll('section').forEach(section => {
                 observer.observe(section);
             });
+
+            // --- New Interactive Project Logic ---
+            
+            // Project 1: CI/CD Simulation
+            const project1Animation = document.getElementById('project1-animation');
+            if (project1Animation) {
+                project1Animation.addEventListener('click', () => {
+                    let steps = ["Code Push", "Build & Test", "Deploy to AWS EC2", "Live Application"];
+                    let currentStep = 0;
+                    
+                    const interval = setInterval(() => {
+                        if (currentStep < steps.length) {
+                            project1Animation.textContent = `▶ ${steps[currentStep]}...`;
+                            currentStep++;
+                        } else {
+                            project1Animation.textContent = "✔ Deployment Complete!";
+                            clearInterval(interval);
+                            setTimeout(() => {
+                                project1Animation.textContent = "Click to start CI/CD simulation.";
+                            }, 2000);
+                        }
+                    }, 800);
+                });
+            }
+
+            // Project 2: Retinal Scan
+            const diagnoseBtn = document.getElementById('project2-diagnose-btn');
+            const diagnosisText = document.getElementById('project2-diagnosis-text');
+            if (diagnoseBtn && diagnosisText) {
+                diagnoseBtn.addEventListener('click', () => {
+                    diagnosisText.textContent = "Scanning... Please wait.";
+                    diagnoseBtn.disabled = true;
+                    setTimeout(() => {
+                        diagnosisText.textContent = "Disease Detected: Diabetic Retinopathy";
+                        diagnoseBtn.disabled = false;
+                    }, 2000);
+                });
+            }
+
+            // Project 4: Face Emotion Detection
+            const emojiButtons = document.querySelectorAll('.project4-emoji-btn');
+            const emojiDisplay = document.getElementById('project4-emoji');
+            if (emojiButtons && emojiDisplay) {
+                emojiButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const emotion = button.getAttribute('data-emotion');
+                        if (emotion === 'happy') {
+                            emojiDisplay.textContent = '😊';
+                        } else if (emotion === 'sad') {
+                            emojiDisplay.textContent = '😔';
+                        } else if (emotion === 'angry') {
+                            emojiDisplay.textContent = '😡';
+                        }
+                    });
+                });
+            }
+
+            // Project 5: Phishing URL Analysis
+            const scanBtn = document.getElementById('project5-scan-btn');
+            const urlInput = document.getElementById('project5-url');
+            const resultText = document.getElementById('project5-result');
+            if (scanBtn && urlInput && resultText) {
+                scanBtn.addEventListener('click', () => {
+                    const url = urlInput.value.toLowerCase();
+                    if (url.includes('malicious') || url.includes('phishing')) {
+                        resultText.textContent = 'Status: Malicious URL ❌';
+                        resultText.classList.remove('text-green-400');
+                        resultText.classList.add('text-red-400');
+                    } else if (url.includes('google') || url.includes('github') || url.includes('linkedin') || url.includes('amazon')) {
+                        resultText.textContent = 'Status: Safe URL ✅';
+                        resultText.classList.remove('text-red-400');
+                        resultText.classList.add('text-green-400');
+                    } else {
+                        resultText.textContent = 'Status: Scan complete. Result inconclusive.';
+                        resultText.classList.remove('text-red-400', 'text-green-400');
+                        resultText.classList.add('text-white');
+                    }
+                });
+            }
         });
     </script>
 </body>
