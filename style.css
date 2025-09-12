@@ -1,0 +1,13 @@
+/* Light professional style */
+body{font-family:Georgia,serif;background:#f6f8fb;color:#0b1220;padding:24px}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px;border-radius:8px;box-shadow:0 8px 30px rgba(13,30,50,0.08)}
+.hd{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eef2f6;padding-bottom:12px}
+h1{margin:0;font-size:28px}
+.role{color:#0d6efd;margin:6px 0 0}
+.summary p{margin:8px 0 0;color:#334155}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:14px}
+.details h3{margin-top:0}
+.details ul{padding-left:18px}
+.cv{background:#0d6efd;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none}
+.contact{margin-top:18px;border-top:1px solid #eef2f6;padding-top:12px}
+@media(max-width:700px){.details{grid-template-columns:1fr}}
