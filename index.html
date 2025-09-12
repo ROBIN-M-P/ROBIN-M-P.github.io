@@ -76,7 +76,7 @@
             transition: max-height 0.5s ease-in-out;
         }
         .project-details.is-open {
-            max-height: 500px; /* A large value to allow for smooth transition */
+            max-height: 1000px; /* Increased value to fit all content */
         }
     </style>
 </head>
@@ -162,7 +162,9 @@
                         <div id="project1-details" class="project-details mt-4 text-gray-300">
                             <ul class="list-disc list-inside space-y-2">
                                 <li>**Technologies:** Docker, Jenkins, GitHub Actions, AWS EC2</li>
-                                <li>**Key Feature:** Fully integrated CI/CD pipeline for automated builds and deployments.</li>
+                                <li>**Challenge:** Getting the CI/CD pipeline to work seamlessly across different environments.</li>
+                                <li>**Solution:** Implemented environment variables and separate workflows for each stage to ensure consistency and avoid manual errors.</li>
+                                <li>**Fact:** A robust CI/CD pipeline is the backbone of modern software development, enabling faster and more reliable releases.</li>
                             </ul>
                         </div>
                     </div>
@@ -182,7 +184,9 @@
                         <div id="project2-details" class="project-details mt-4 text-gray-300">
                             <ul class="list-disc list-inside space-y-2">
                                 <li>**Technologies:** Deep Learning, Gemini 1.5 API</li>
-                                <li>**Key Feature:** Achieved 92.37% accuracy in disease classification.</li>
+                                <li>**Challenge:** The initial dataset was noisy and inconsistent, which lowered the model's accuracy.</li>
+                                <li>**Solution:** Used data preprocessing and leveraged the Gemini 1.5 API for more accurate data sourcing and model training, leading to a significant improvement in results.</li>
+                                <li>**Fact:** Your model is only as good as the data you train it on. Data cleaning and preparation are crucial steps in any successful machine learning project.</li>
                             </ul>
                         </div>
                     </div>
@@ -202,7 +206,53 @@
                         <div id="project3-details" class="project-details mt-4 text-gray-300">
                             <ul class="list-disc list-inside space-y-2">
                                 <li>**Technologies:** AWS Lambda, AWS S3, Python</li>
-                                <li>**Key Feature:** Event-driven architecture for automatic image handling.</li>
+                                <li>**Challenge:** Handling large image files and managing state between function calls within Lambda's execution limits.</li>
+                                <li>**Solution:** Designed an event-driven architecture where S3 triggers a Lambda function, which then processes the image and saves the output back to S3. This avoids state management issues and keeps function execution lightweight.</li>
+                                <li>**Fact:** Serverless architecture can dramatically reduce operational costs and management overhead for tasks that don't require a constantly running server.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Real-time Face Attribute Detection -->
+                <div class="bg-gray-800 rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Real-time Face Attribute Detection</h3>
+                    <p class="text-gray-400 text-sm mb-4">An interface for detecting Emotion, Gender, Age, and Race.</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Created a real-time interface for detecting Emotion, Gender, Age, and Race using CNN and VGG models.
+                    </p>
+                    <div class="mt-4">
+                        <button class="toggle-details bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors" data-project-id="project4">
+                            More Details
+                        </button>
+                        <div id="project4-details" class="project-details mt-4 text-gray-300">
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>**Technologies:** CNN, VGG Models</li>
+                                <li>**Challenge:** Ensuring real-time performance on commodity hardware due to the computational expense of the models.</li>
+                                <li>**Solution:** Optimized the models for efficiency and used a lightweight web framework to ensure a smooth user experience.</li>
+                                <li>**Fact:** This project showcases a great balance between model complexity and performance, a key consideration for real-time applications.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5: Phishing URL Analysis -->
+                <div class="bg-gray-800 rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Phishing URL Analysis</h3>
+                    <p class="text-gray-400 text-sm mb-4">A machine learning project to detect and analyze phishing URLs.</p>
+                    <p class="text-300 leading-relaxed">
+                        Built a phishing detection system using machine learning and analytics on URL patterns to protect users from malicious links.
+                    </p>
+                    <div class="mt-4">
+                        <button class="toggle-details bg-gray-700 text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors" data-project-id="project5">
+                            More Details
+                        </button>
+                        <div id="project5-details" class="project-details mt-4 text-gray-300">
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>**Technologies:** Machine Learning, Data Analytics</li>
+                                <li>**Challenge:** The ever-evolving nature of phishing attacks requires the model to continuously adapt to new patterns.</li>
+                                <li>**Solution:** Used a machine learning model that learns from a wide range of features (e.g., URL length, use of IP addresses, domain age) rather than relying on a static list.</li>
+                                <li>**Fact:** This project highlights your skills in cybersecurity, a field with high demand for ML specialists.</li>
                             </ul>
                         </div>
                     </div>
@@ -273,10 +323,11 @@
                 <p class="text-gray-300 mb-8">
                     Feel free to reach out to me for collaborations, job opportunities, or just to say hi!
                 </p>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Your Name" class="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500" />
-                    <input type="email" placeholder="Your Email" class="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500" />
-                    <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                <form class="space-y-4" action="https://formsubmit.co/your-email@example.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Portfolio Submission">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                    <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                    <textarea name="message" placeholder="Your Message" required rows="5" class="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
                     <button type="submit" class="w-full bg-teal-500 text-white font-semibold py-3 rounded-md shadow-lg hover:bg-teal-600 transition-colors duration-300">
                         Send Message
                     </button>
