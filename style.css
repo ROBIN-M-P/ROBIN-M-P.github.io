@@ -1,0 +1,75 @@
+/* Custom CSS for Backgrounds and Spotlight Effects */
+
+/* Background Grid Pattern */
+.bg-grid {
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+/* SPOTLIGHT CARD EFFECT */
+/* This requires JS to update --mouse-x and --mouse-y */
+.spotlight-card {
+    position: relative;
+    overflow: hidden;
+    /* Basic style handled by Tailwind, this adds the glow */
+}
+
+/* The glow layer */
+.spotlight-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: inherit;
+    padding: 1px; /* The border width */
+    background: radial-gradient(
+        800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(255, 255, 255, 0.3),
+        transparent 40%
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s;
+    z-index: 20;
+}
+
+/* The hover radial background inside the card */
+.spotlight-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        rgba(255, 255, 255, 0.04),
+        transparent 40%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+/* Show on hover */
+.spotlight-card:hover::before,
+.spotlight-card:hover::after {
+    opacity: 1;
+}
+
+/* Loader Animation */
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
