@@ -1,75 +1,51 @@
-// 1. Initialize Icons and Animations
-document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
-    AOS.init({
-        once: true,
-        offset: 50,
-        duration: 800,
+// Initialize Icons
+lucide.createIcons();
+
+function switchTab(tabId) {
+    // 1. Hide all tab contents
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => {
+        content.classList.add('hidden');
+        content.classList.remove('active');
     });
-});
 
-// 2. Spotlight Effect Logic (Mouse Tracking)
-const cards = document.querySelectorAll(".spotlight-card");
+    // 2. Remove 'active' class from all nav buttons
+    const navBtns = document.querySelectorAll('.nav-btn');
+    navBtns.forEach(btn => {
+        btn.classList.remove('active');
+    });
 
-document.onmousemove = e => {
-    for(const card of cards) {
-        const rect = card.getBoundingClientRect(),
-              x = e.clientX - rect.left,
-              y = e.clientY - rect.top;
-
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
+    // 3. Show the selected tab content
+    const selectedTab = document.getElementById(tabId);
+    if (selectedTab) {
+        selectedTab.classList.remove('hidden');
+        selectedTab.classList.add('active');
     }
-};
 
-// 3. Mobile Menu Toggle
-const menuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
-
-// 4. EmailJS Configuration
-const PUBLIC_KEY = "Z5t8xpJmng6R4tKno";
-const SERVICE_ID = "service_ra6g2qh";
-const TEMPLATE_ID = "template_83jeqvl";
-
-emailjs.init(PUBLIC_KEY);
-
-const contactForm = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
-const statusMsg = document.getElementById('status-msg');
-
-if(contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<div class="loader"></div> Sending...';
-        submitBtn.disabled = true;
-
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
-            .then(function() {
-                submitBtn.innerHTML = 'Sent Successfully!';
-                submitBtn.classList.add('bg-green-600', 'text-white');
-                statusMsg.classList.remove('hidden');
-                statusMsg.classList.add('text-green-400');
-                statusMsg.innerText = "Thanks! I'll be in touch soon.";
-                contactForm.reset();
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('bg-green-600');
-                    statusMsg.classList.add('hidden');
-                }, 5000);
-            }, function(error) {
-                console.log('FAILED...', error);
-                submitBtn.innerHTML = 'Failed';
-                submitBtn.disabled = false;
-                statusMsg.classList.remove('hidden');
-                statusMsg.classList.add('text-red-400');
-                statusMsg.innerText = "Something went wrong. Please try again.";
-            });
-    });
+    // 4. Highlight the correct sidebar button
+    // Find the button that calls this specific switchTab('tabId')
+    // We iterate through buttons to match the onclick attribute or logic
+    // A simpler way is to match by index, but let's do it by context.
+    
+    // In this specific HTML structure, we can just grab them by order
+    // Order: About(0), Resume(1), Portfolio(2), Contact(3)
+    const indexMap = {
+        'about': 0,
+        'resume': 1,
+        'portfolio': 2,
+        'contact': 3
+    };
+    
+    if (navBtns[indexMap[tabId]]) {
+        navBtns[indexMap[tabId]].classList.add('active');
+    }
+    
+    // Re-initialize icons if dynamic content requires it (optional but good practice)
+    lucide.createIcons();
 }
+
+// Set default tab on load (if not set in HTML)
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if we want to start on a specific tab, else default to 'about'
+    // This is already handled by the HTML classes (About has 'active', others 'hidden')
+});
