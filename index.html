@@ -5,339 +5,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robin M P | DevOps Engineer</title>
     <meta name="description" content="Portfolio of Robin M P - DevOps Engineer & Cloud Enthusiast.">
-
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
-
-        /* Background grid */
-        .bg-grid-pattern {
-            background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        /* Cursor blink */
-        .cursor-blink { animation: blink 1s step-end infinite; }
-        @keyframes blink { 0%,100% {opacity:1;} 50% {opacity:0;} }
-
-        /* Loader */
-        .loader { border:3px solid #f3f3f3; border-top:3px solid #3b82f6; border-radius:50%; width:20px; height:20px; animation:spin 1s linear infinite;}
-        @keyframes spin {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-200 font-sans antialiased overflow-x-hidden relative">
+<body class="bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-blue-500/30">
 
-    <div class="fixed inset-0 z-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
+    <div class="fixed inset-0 z-0 bg-grid opacity-20 pointer-events-none"></div>
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-[20%] left-[10%] w-[30%] h-[30%] bg-blue-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-[20%] right-[10%] w-[30%] h-[30%] bg-purple-600/10 rounded-full blur-[100px]"></div>
     </div>
 
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 font-bold text-2xl text-blue-400 tracking-tighter cursor-pointer hover:scale-105 transition-transform" onclick="window.scrollTo(0,0)">
-                    ROBIN<span class="text-white">MP</span>
-                </div>
-
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="text-slate-300 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-1">Home</a>
-                        <a href="#about" class="text-slate-300 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-1">About</a>
-                        <a href="#skills" class="text-slate-300 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-1">Skills</a>
-                        <a href="#projects" class="text-slate-300 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-1">Projects</a>
-                        <a href="#contact" class="bg-blue-600 text-white hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-blue-500/50">Hire Me</a>
-                    </div>
-                </div>
-
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-400 hover:text-white p-2">
-                        <i data-lucide="menu" class="h-6 w-6"></i>
-                    </button>
-                </div>
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-white/5 bg-neutral-950/70 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between p-4">
+            <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="self-center text-xl font-bold whitespace-nowrap text-white tracking-tighter">ROBIN<span class="text-blue-500">.</span></span>
+            </a>
+            <div class="hidden md:block">
+                <ul class="font-medium flex flex-row space-x-8">
+                    <li><a href="#about" class="block py-2 px-3 text-neutral-400 hover:text-white transition-colors">About</a></li>
+                    <li><a href="#projects" class="block py-2 px-3 text-neutral-400 hover:text-white transition-colors">Projects</a></li>
+                    <li><a href="#experience" class="block py-2 px-3 text-neutral-400 hover:text-white transition-colors">Timeline</a></li>
+                    <li><a href="#contact" class="block py-2 px-3 text-blue-400 hover:text-blue-300 transition-colors">Contact</a></li>
+                </ul>
             </div>
+            <button id="mobile-menu-btn" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-400 rounded-lg md:hidden hover:bg-neutral-800 focus:outline-none">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 backdrop-blur-xl absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Home</a>
-                <a href="#projects" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Projects</a>
-                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-blue-400 font-bold hover:bg-slate-800">Contact</a>
-            </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-950 border-b border-white/5">
+            <ul class="flex flex-col p-4 font-medium">
+                <li><a href="#about" class="block py-2 px-3 text-neutral-400 hover:text-white">About</a></li>
+                <li><a href="#projects" class="block py-2 px-3 text-neutral-400 hover:text-white">Projects</a></li>
+                <li><a href="#contact" class="block py-2 px-3 text-blue-400">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-
-            <div data-aos="fade-right" data-aos-duration="1000">
-                <div class="inline-flex items-center px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8">
-                    <span class="relative flex h-3 w-3 mr-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-                    </span>
-                    Day 1 Ready Engineer
+    <main class="max-w-5xl mx-auto px-4 pt-32 pb-20">
+        
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
+                <div class="flex-1">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+                        DevOps Engineer <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Day 1 Ready.</span>
+                    </h1>
+                    <p class="text-lg text-neutral-400 mb-6 max-w-xl leading-relaxed">
+                        Hi, I'm <strong class="text-white">Robin M P</strong>. I bridge the gap between writing code and deploying it. [cite_start]MCA Graduate specializing in AWS, Docker, and CI/CD automation[cite: 20, 23].
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#contact" class="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-neutral-200 transition-colors">
+                            Hire Me
+                        </a>
+                        <a href="Profile (2).pdf" target="_blank" class="px-6 py-3 border border-white/10 bg-white/5 text-white font-medium rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2">
+                            <i data-lucide="download" class="w-4 h-4"></i> Resume
+                        </a>
+                    </div>
                 </div>
-
-                <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                    I am a <br/>
-                    <span id="typing-text" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">DevOps Engineer</span>
-                    <span class="cursor-blink text-white">|</span>
-                </h1>
-
-                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-                    Bridging the gap between writing code and deploying it at scale. 
-                    I transform manual processes into automated pipelines using AWS, Docker, and Jenkins.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="px-8 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        Send Feedback
-                    </a>
-                    <a href="ROBIN 2025 Cloud Resume.pdf" target="_blank" class="px-8 py-4 rounded-xl bg-slate-800 text-white font-semibold hover:bg-slate-700 border border-slate-700 transition-all hover:scale-105 flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Resume
-                    </a>
+                <div class="w-full md:w-1/3">
+                    <div class="bg-neutral-900 border border-white/10 rounded-xl p-4 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div class="flex gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                        </div>
+                        <div class="font-mono text-xs text-neutral-400 space-y-2">
+                            <p><span class="text-purple-400">const</span> <span class="text-blue-400">engineer</span> = {</p>
+                            <p class="pl-4">name: <span class="text-green-400">'Robin'</span>,</p>
+                            <p class="pl-4">focus: <span class="text-green-400">'DevOps'</span>,</p>
+                            <p class="pl-4">tools: [<span class="text-green-400">'AWS'</span>, <span class="text-green-400">'Docker'</span>, <span class="text-green-400">'K8s'</span>],</p>
+                            <p class="pl-4">status: <span class="text-green-400">'Ready to Deploy'</span></p>
+                            <p>};</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="hidden lg:block relative" data-aos="fade-left" data-aos-duration="1200">
-                <div class="absolute top-10 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-[80px] -z-10 animate-pulse"></div>
-                <div class="absolute bottom-10 left-10 w-72 h-72 bg-emerald-600/20 rounded-full blur-[80px] -z-10 animate-pulse" style="animation-delay: 1s;"></div>
-
-                <div class="relative w-[380px] h-[480px] mx-auto transform rotate-3 hover:rotate-0 transition-all duration-500 ease-out group">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-slate-800 to-slate-900 rounded-2xl transform translate-x-4 translate-y-4 -z-10 border border-slate-700"></div>
-
-                    <div class="relative w-full h-full rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
-                        <img src="assets/robin.jpg" alt="Robin M P" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
-                    </div>
-
-                    <div class="absolute -left-6 bottom-12 bg-slate-800/90 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-xl" data-aos="fade-right" data-aos-delay="400">
-                        <div class="flex items-center gap-3">
-                            <div class="p-2 bg-blue-500/20 rounded-lg">
-                                <i data-lucide="terminal" class="w-6 h-6 text-blue-400"></i>
+        <section id="about" class="mb-24">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="layout-grid" class="w-5 h-5 text-blue-400"></i> Overview</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <div class="md:col-span-2 row-span-2 spotlight-card rounded-2xl p-8 bg-neutral-900/50 border border-white/5 relative group">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10">
+                                <img src="assets/robin.jpg" alt="Robin" class="w-full h-full object-cover">
                             </div>
                             <div>
-                                <div class="text-xs text-slate-400">Current Status</div>
-                                <div class="text-sm font-bold text-white">Open for Work</div>
+                                <h3 class="text-xl font-bold text-white">Robin M P</h3>
+                                <p class="text-sm text-neutral-400">MCA Graduate '25 | Bengaluru</p>
                             </div>
+                        </div>
+                        <p class="text-neutral-400 leading-relaxed mb-4">
+                            I don't just "maintain" servers; I optimize them. With an 8.6 CGPA from Bangalore Institute of Technology, I focus on building scalable Cloud Infrastructure. [cite_start]I have architected automated pipelines for apps like 'Zomato Clone' and 'Retinal AI'[cite: 23, 28, 30].
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">AWS Certified Practitioner (Pursuing)</span>
+                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full border border-green-500/20">92% AI Accuracy Project</span>
                         </div>
                     </div>
                 </div>
+
+                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 flex flex-col justify-center">
+                    <h3 class="text-lg font-bold text-white mb-4">Stack</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <i data-lucide="cloud" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
+                        <i data-lucide="container" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
+                        <i data-lucide="terminal" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
+                        <i data-lucide="database" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
+                        <i data-lucide="code-2" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
+                    </div>
+                    <p class="mt-4 text-xs text-neutral-500">AWS, Docker, Jenkins, Python, Linux</p>
+                </div>
+
+                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">Let's Connect</h3>
+                        [cite_start]<p class="text-xs text-neutral-400">Bengaluru, India [cite: 21]</p>
+                    </div>
+                    <div class="flex gap-3 mt-4">
+                        <a href="https://linkedin.com/in/robinmp" target="_blank" class="p-2 bg-white/5 rounded-lg hover:bg-blue-600 hover:text-white transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="https://github.com/robin-m-p" target="_blank" class="p-2 bg-white/5 rounded-lg hover:bg-neutral-700 hover:text-white transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                        <a href="mailto:robinpolymp@gmail.com" class="p-2 bg-white/5 rounded-lg hover:bg-red-500 hover:text-white transition-all"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <section id="about" class="py-20 relative z-10 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="projects" class="mb-24">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="folder-git-2" class="w-5 h-5 text-purple-400"></i> Featured Projects</h2>
             
-            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
-                <div class="relative order-2 lg:order-1" data-aos="zoom-in">
-                    <div class="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full"></div>
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full border-4 border-slate-800 overflow-hidden shadow-2xl group">
-                         <img src="assets/robin.jpg" alt="Robin M P" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-neutral-800 rounded-lg"><i data-lucide="server" class="w-6 h-6 text-blue-400"></i></div>
+                        <span class="text-xs font-mono text-neutral-500">DEVOPS</span>
                     </div>
-                    <div class="absolute bottom-4 right-10 md:right-20 bg-slate-950 border border-slate-800 px-4 py-2 rounded-lg shadow-xl flex items-center gap-2">
-                         <i data-lucide="award" class="w-5 h-5 text-yellow-500"></i>
-                         <span class="text-xs font-bold text-slate-300">AWS Practitioner</span>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Zomato Clone Pipeline</h3>
+                    <p class="text-sm text-neutral-400 mb-4">
+                        Architected a fully automated CI/CD pipeline using Docker, Jenkins, and GitHub Actions. [cite_start]Deployed final build to AWS EC2[cite: 28].
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Docker</span>
+                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">AWS EC2</span>
+                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Jenkins</span>
                     </div>
                 </div>
 
-                <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                        Beyond the <span class="text-blue-400">Code</span>
-                    </h2>
-                    <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
-                        <p>
-                            As a <strong class="text-white">Master of Computer Applications (MCA)</strong> graduate from Bangalore Institute of Technology, I don't just write code—I deploy it.
-                        </p>
-                        <p>
-                            While my academic foundation is strong (8.6 CGPA), my true passion lies in <strong class="text-white">DevOps and Cloud Engineering</strong>. I bridge the gap between development and operations by building scalable infrastructure on AWS and automating workflows with Docker and Jenkins.
-                        </p>
-                        <p>
-                            I have spent the last year simulating real-world engineering challenges to ensure I am <span class="text-emerald-400 font-medium">"Day 1 Ready"</span> for the industry.
-                        </p>
+                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-neutral-800 rounded-lg"><i data-lucide="zap" class="w-6 h-6 text-yellow-400"></i></div>
+                        <span class="text-xs font-mono text-neutral-500">CLOUD</span>
                     </div>
-                    
-                    <div class="mt-8 flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-slate-800 rounded-full text-sm text-blue-300 border border-blue-500/20 font-medium">MCA '25</span>
-                        <span class="px-4 py-2 bg-slate-800 rounded-full text-sm text-purple-300 border border-purple-500/20 font-medium">Immediate Joiner</span>
-                        <span class="px-4 py-2 bg-slate-800 rounded-full text-sm text-emerald-300 border border-emerald-500/20 font-medium">Bengaluru</span>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Serverless Image Processing</h3>
+                    <p class="text-sm text-neutral-400 mb-4">
+                        Event-driven pipeline using AWS Lambda and S3. [cite_start]Python handlers optimize storage and processing costs automatically[cite: 29].
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Lambda</span>
+                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">S3</span>
+                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Python</span>
                     </div>
+                </div>
+
+                 <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 group md:col-span-2">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-neutral-800 rounded-lg"><i data-lucide="eye" class="w-6 h-6 text-emerald-400"></i></div>
+                        <span class="text-xs font-mono text-neutral-500">AI / ML</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Retinal Disease Detection</h3>
+                    <p class="text-sm text-neutral-400 mb-4">
+                        Full-stack web app integrating Gemini 1.5 API for diagnosis. Achieved 92.37% accuracy. [cite_start]Published in IJSREM[cite: 30].
+                    </p>
+                    <a href="https://ijsrem.com/download/automated-retinal-disease-detection-and-classification-using-ai/" target="_blank" class="text-sm text-emerald-400 hover:underline flex items-center gap-1">Read Publication <i data-lucide="external-link" class="w-3 h-3"></i></a>
                 </div>
             </div>
+        </section>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-slate-800/50">
-                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="0">
-                    <i data-lucide="graduation-cap" class="w-8 h-8 text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                    <div class="text-3xl font-bold text-white mb-1">8.6</div>
-                    <div class="text-sm text-slate-400">MCA CGPA</div>
+        <section id="experience" class="mb-24">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="history" class="w-5 h-5 text-gray-400"></i> Education Journey</h2>
+            
+            <div class="border-l border-white/10 ml-3 space-y-8">
+                <div class="relative pl-8">
+                    <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-blue-500"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-neutral-500">Feb 2024 - Nov 2025</time>
+                    <h3 class="text-lg font-semibold text-white mt-1">Master of Computer Applications</h3>
+                    <p class="text-neutral-400 text-sm">Bangalore Institute of Technology | [cite_start]8.6 CGPA [cite: 38, 39, 24]</p>
                 </div>
-                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="100">
-                    <i data-lucide="check-circle" class="w-8 h-8 text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                    <div class="text-3xl font-bold text-white mb-1">92%</div>
-                    <div class="text-sm text-slate-400">AI Accuracy</div>
-                </div>
-                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="200">
-                    <i data-lucide="code-2" class="w-8 h-8 text-purple-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                    <div class="text-3xl font-bold text-white mb-1">4+</div>
-                    <div class="text-sm text-slate-400">Major Projects</div>
-                </div>
-                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-orange-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="300">
-                    <i data-lucide="zap" class="w-8 h-8 text-orange-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                    <div class="text-3xl font-bold text-white mb-1">Day 1</div>
-                    <div class="text-sm text-slate-400">Ready to Deploy</div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-neutral-700"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-neutral-500">Apr 2020 - Sep 2023</time>
+                    <h3 class="text-lg font-semibold text-white mt-1">Bachelor of Computer Applications</h3>
+                    <p class="text-neutral-400 text-sm">S.R.N.M. [cite_start]National College, Shivamogga [cite: 40, 41]</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="py-20 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Technical Arsenal</h2>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <div data-aos="fade-right">
-                    <h3 class="text-xl font-semibold text-blue-400 mb-6 flex items-center gap-2">
-                        <i data-lucide="cloud" class="w-5 h-5"></i> Cloud & DevOps
-                    </h3>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-2 text-sm text-slate-300">
-                                <span>AWS (EC2, S3, Lambda)</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-                                <div class="skill-bar h-full bg-blue-500 rounded-full w-0" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2 text-sm text-slate-300">
-                                <span>Docker & Containers</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-                                <div class="skill-bar h-full bg-blue-500 rounded-full w-0" data-width="75%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2 text-sm text-slate-300">
-                                <span>Jenkins & CI/CD</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-                                <div class="skill-bar h-full bg-blue-500 rounded-full w-0" data-width="70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div data-aos="fade-left">
-                    <h3 class="text-xl font-semibold text-emerald-400 mb-6 flex items-center gap-2">
-                        <i data-lucide="code" class="w-5 h-5"></i> Development
-                    </h3>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-2 text-sm text-slate-300">
-                                <span>Python</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-                                <div class="skill-bar h-full bg-emerald-500 rounded-full w-0" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2 text-sm text-slate-300">
-                                <span>Linux/Bash</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-                                <div class="skill-bar h-full bg-emerald-500 rounded-full w-0" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2 text-sm text-slate-300">
-                                <span>SQL & Database</span>
-                                <span>65%</span>
-                            </div>
-                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-                                <div class="skill-bar h-full bg-emerald-500 rounded-full w-0" data-width="65%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section id="contact" class="max-w-2xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
+                <p class="text-neutral-400">Send me a message for collaborations.</p>
             </div>
-        </div>
-    </section>
 
-    <footer class="py-8 text-center text-slate-600 text-sm">
-        <p>© 2025 Robin M P. Built with automation in mind.</p>
+            <form id="contact-form" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="Name" required class="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors">
+                    <input type="email" name="email" placeholder="Email" required class="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors">
+                </div>
+                <textarea name="message" rows="4" placeholder="Message" required class="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"></textarea>
+                
+                <input type="hidden" name="title" value="Contact Form">
+                <input type="hidden" name="time" value="">
+
+                <button type="submit" id="submit-btn" class="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-neutral-200 transition-colors flex justify-center items-center gap-2">
+                    Send Message <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+                <div id="status-msg" class="text-center text-sm mt-2 hidden"></div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center text-neutral-500 text-sm">
+        <p>&copy; 2025 Robin M P. Built with clean code.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Lucide icons
-        lucide.createIcons();
-        // AOS
-        AOS.init({ once:true });
-
-        // Navbar scroll effect and skill bar animation
-        const navbar = document.getElementById('navbar');
-        let skillsAnimated = false;
-
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 20){
-                navbar.classList.add('glass-nav','bg-slate-900/90','shadow-lg');
-            } else {
-                navbar.classList.remove('glass-nav','bg-slate-900/90','shadow-lg');
-            }
-
-            // Animate skill bars
-            const skillsSection = document.getElementById('skills');
-            if(!skillsAnimated && skillsSection.getBoundingClientRect().top < window.innerHeight){
-                document.querySelectorAll('.skill-bar').forEach(bar => {
-                    bar.style.width = bar.getAttribute('data-width');
-                });
-                skillsAnimated = true;
-            }
-        });
-
-        // Mobile menu toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Typing effect
-        const typingText = document.getElementById('typing-text');
-        const phrases = ['DevOps Engineer', 'Cloud Enthusiast', 'Automation Expert'];
-        let i=0, j=0, currentPhrase='', isDeleting=false;
-        function type() {
-            if(i >= phrases.length) i=0;
-            currentPhrase = phrases[i];
-            typingText.textContent = currentPhrase.substring(0,j);
-            if(!isDeleting) {
-                if(j<currentPhrase.length) j++;
-                else { isDeleting=true; setTimeout(type,1000); return; }
-            } else {
-                if(j>0) j--;
-                else { isDeleting=false; i++; setTimeout(type,500); return; }
-            }
-            setTimeout(type,100);
-        }
-        type();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
