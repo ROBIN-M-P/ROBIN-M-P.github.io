@@ -6,16 +6,12 @@
     <title>Robin M P | DevOps Engineer</title>
     <meta name="description" content="Portfolio of Robin M P - DevOps Engineer & Cloud Enthusiast.">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <style>
@@ -55,23 +51,19 @@
 </head>
 <body class="bg-slate-950 text-slate-200 font-sans antialiased overflow-x-hidden relative">
 
-    <!-- Background Elements -->
     <div class="fixed inset-0 z-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
     </div>
 
-    <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
                 <div class="flex-shrink-0 font-bold text-2xl text-blue-400 tracking-tighter cursor-pointer hover:scale-105 transition-transform" onclick="window.scrollTo(0,0)">
                     ROBIN<span class="text-white">MP</span>
                 </div>
                 
-                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="text-slate-300 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-1">Home</a>
@@ -82,7 +74,6 @@
                     </div>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-slate-400 hover:text-white p-2">
                         <i data-lucide="menu" class="h-6 w-6"></i>
@@ -91,7 +82,6 @@
             </div>
         </div>
         
-        <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 backdrop-blur-xl absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Home</a>
@@ -101,11 +91,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
             
-            <!-- Text Content -->
             <div data-aos="fade-right" data-aos-duration="1000">
                 <div class="inline-flex items-center px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8">
                     <span class="relative flex h-3 w-3 mr-3">
@@ -138,71 +126,58 @@
                 </div>
             </div>
 
-            <!-- Hero Visual (Interactive Code Block) -->
             <div class="hidden lg:block relative" data-aos="fade-left" data-aos-duration="1200">
-                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
-                <div class="relative bg-slate-900 rounded-2xl border border-slate-700 p-6 shadow-2xl transform transition-transform hover:rotate-1">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                        <div class="ml-auto text-xs text-slate-500">pipeline.yml</div>
-                    </div>
-                    <pre class="font-mono text-sm text-slate-300 overflow-x-auto">
-<code><span class="text-pink-400">name:</span> CI/CD Pipeline
-<span class="text-pink-400">on:</span> [push]
+                <div class="absolute top-10 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-[80px] -z-10 animate-pulse"></div>
+                <div class="absolute bottom-10 left-10 w-72 h-72 bg-emerald-600/20 rounded-full blur-[80px] -z-10 animate-pulse" style="animation-delay: 1s;"></div>
 
-<span class="text-purple-400">jobs:</span>
-  <span class="text-blue-400">deploy:</span>
-    <span class="text-pink-400">runs-on:</span> ubuntu-latest
-    <span class="text-purple-400">steps:</span>
-      - <span class="text-yellow-300">name:</span> Checkout Code
-        <span class="text-pink-400">uses:</span> actions/checkout@v2
-      
-      - <span class="text-yellow-300">name:</span> Build Docker Image
-        <span class="text-pink-400">run:</span> docker build -t app .
-      
-      - <span class="text-yellow-300">name:</span> Deploy to AWS
-        <span class="text-pink-400">run:</span> |
-          aws ecs update-service \
-          --cluster production \
-          --service zomato-clone</span></code></pre>
-                </div>
-                
-                <!-- Floating Badges -->
-                <div class="absolute -right-8 top-10 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-xl animate-bounce" style="animation-duration: 3s;">
-                    <i data-lucide="cloud" class="w-8 h-8 text-blue-400"></i>
-                </div>
-                <div class="absolute -left-8 bottom-20 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-xl animate-bounce" style="animation-duration: 4s;">
-                    <i data-lucide="container" class="w-8 h-8 text-emerald-400"></i>
+                <div class="relative w-[400px] h-[500px] mx-auto transform rotate-3 hover:rotate-0 transition-all duration-500 ease-out group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-slate-800 to-slate-900 rounded-2xl transform translate-x-4 translate-y-4 -z-10 border border-slate-700"></div>
+                    
+                    <div class="relative w-full h-full rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
+                        <img src="assets/robin.jpg" alt="Robin M P" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                    </div>
+
+                    <div class="absolute -left-6 bottom-12 bg-slate-800/90 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-xl" data-aos="fade-right" data-aos-delay="400">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-blue-500/20 rounded-lg">
+                                <i data-lucide="terminal" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Current Status</div>
+                                <div class="text-sm font-bold text-white">Open for Work</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute -right-4 top-12 bg-slate-800/90 backdrop-blur-md p-3 rounded-xl border border-slate-700 shadow-xl animate-bounce" style="animation-duration: 4s;">
+                        <i data-lucide="container" class="w-8 h-8 text-emerald-400"></i>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
-    <!-- About Stats -->
     <section id="about" class="py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Stat Card 1 -->
                 <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="0">
                     <i data-lucide="award" class="w-8 h-8 text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
                     <div class="text-3xl font-bold text-white mb-1">8.6</div>
                     <div class="text-sm text-slate-400">MCA CGPA</div>
                 </div>
-                <!-- Stat Card 2 -->
                 <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="100">
                     <i data-lucide="check-circle" class="w-8 h-8 text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
                     <div class="text-3xl font-bold text-white mb-1">92%</div>
                     <div class="text-sm text-slate-400">AI Accuracy</div>
                 </div>
-                <!-- Stat Card 3 -->
                 <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="200">
                     <i data-lucide="code-2" class="w-8 h-8 text-purple-400 mb-3 group-hover:scale-110 transition-transform"></i>
                     <div class="text-3xl font-bold text-white mb-1">4+</div>
                     <div class="text-sm text-slate-400">Major Projects</div>
                 </div>
-                <!-- Stat Card 4 -->
                 <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-orange-500/50 transition-all group" data-aos="zoom-in" data-aos-delay="300">
                     <i data-lucide="zap" class="w-8 h-8 text-orange-400 mb-3 group-hover:scale-110 transition-transform"></i>
                     <div class="text-3xl font-bold text-white mb-1">Day 1</div>
@@ -212,13 +187,11 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="py-20 bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Technical Arsenal</h2>
             
             <div class="grid md:grid-cols-2 gap-12">
-                <!-- Cloud Skills -->
                 <div data-aos="fade-right">
                     <h3 class="text-xl font-semibold text-blue-400 mb-6 flex items-center gap-2">
                         <i data-lucide="cloud" class="w-5 h-5"></i> Cloud & DevOps
@@ -254,7 +227,6 @@
                     </div>
                 </div>
 
-                <!-- Coding Skills -->
                 <div data-aos="fade-left">
                     <h3 class="text-xl font-semibold text-emerald-400 mb-6 flex items-center gap-2">
                         <i data-lucide="code" class="w-5 h-5"></i> Development
@@ -293,14 +265,12 @@
         </div>
     </section>
 
-    <!-- Featured Projects -->
     <section id="projects" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Featured Projects</h2>
             
             <div class="grid md:grid-cols-2 gap-8">
                 
-                <!-- Project 1 -->
                 <div class="group bg-slate-900 rounded-2xl p-8 border border-slate-800 hover:border-blue-500/50 transition-all hover:shadow-2xl hover:shadow-blue-900/20 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-blue-500/10 rounded-xl">
@@ -319,7 +289,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="group bg-slate-900 rounded-2xl p-8 border border-slate-800 hover:border-purple-500/50 transition-all hover:shadow-2xl hover:shadow-purple-900/20 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-purple-500/10 rounded-xl">
@@ -338,7 +307,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
                 <div class="group bg-slate-900 rounded-2xl p-8 border border-slate-800 hover:border-emerald-500/50 transition-all hover:shadow-2xl hover:shadow-emerald-900/20 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-emerald-500/10 rounded-xl">
@@ -364,24 +332,20 @@
         </div>
     </section>
 
-    <!-- Feedback / Contact Section (Functional) -->
     <section id="contact" class="py-20 bg-slate-900/50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl" data-aos="zoom-in-up">
                 <h2 class="text-3xl font-bold text-white text-center mb-2">Get In Touch</h2>
                 <p class="text-slate-400 text-center mb-8">Have a question or want to hire me? Send me a message directly.</p>
 
-                <!-- Feedback Form -->
                 <form id="contact-form" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-slate-400 mb-2">Your Name</label>
-                            <!-- UPDATED: name is now "name" to match your email template -->
                             <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-400 mb-2">Your Email</label>
-                            <!-- UPDATED: name is now "email" to match your email template -->
                             <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
                         </div>
                     </div>
@@ -390,17 +354,13 @@
                         <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"></textarea>
                     </div>
                     
-                    <!-- REQUIRED HIDDEN FIELDS (match your EmailJS template) -->
                     <input type="hidden" name="title" value="Contact Form">
                     <input type="hidden" name="time" value="">
-                    <!-- /hidden fields -->
-
                     <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02] shadow-lg flex justify-center items-center gap-2">
                         <span>Send Message</span>
                         <i data-lucide="send" class="w-4 h-4"></i>
                     </button>
                     
-                    <!-- Feedback Status Messages -->
                     <div id="status-msg" class="text-center text-sm font-medium hidden"></div>
                 </form>
 
@@ -428,12 +388,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-8 text-center text-slate-600 text-sm">
         <p>© 2025 Robin M P. Built with automation in mind.</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // 1. Initialize Lucide Icons
