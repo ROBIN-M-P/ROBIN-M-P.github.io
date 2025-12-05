@@ -390,6 +390,11 @@
                         <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"></textarea>
                     </div>
                     
+                    <!-- REQUIRED HIDDEN FIELDS (match your EmailJS template) -->
+                    <input type="hidden" name="title" value="Contact Form">
+                    <input type="hidden" name="time" value="">
+                    <!-- /hidden fields -->
+
                     <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02] shadow-lg flex justify-center items-center gap-2">
                         <span>Send Message</span>
                         <i data-lucide="send" class="w-4 h-4"></i>
@@ -501,17 +506,20 @@
             menu.classList.toggle('hidden');
         });
 
-        // 5. EMAILJS SETUP (FEEDBACK SYSTEM)
+        // 5. EMAILJS SETUP (FIXED)
         // ********************************************
-        // FILL IN YOUR 3 KEYS HERE:
+        // Make sure these values match your EmailJS dashboard exactly.
         // ********************************************
 
-        const PUBLIC_KEY = "Z5t8xpJmng6R4tKno"; // Go to Account -> API Keys to find this.
-        const SERVICE_ID = "service_ra6g2qh"; // I filled this from your screenshot!
-        const TEMPLATE_ID = "template_ip0im7o"; // Go to Email Templates -> Settings to find this.
+        const PUBLIC_KEY = "Z5t8xpJmng6R4tKno";        // your EmailJS public key
+        const SERVICE_ID = "service_ra6g2qh";          // your service id
+        const TEMPLATE_ID = "template_83jeqvl";        // CORRECT template id from your history
 
         // Initialize EmailJS
         emailjs.init(PUBLIC_KEY);
+
+        // Debugging log to confirm what's being used
+        console.log("EmailJS INIT:", { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY });
 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -526,22 +534,28 @@
 
             // Send Email
             emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
-                .then(function() {
+                .then(function(response) {
+                    // Success UI
                     btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> Sent Successfully!';
                     btn.classList.remove('from-blue-600', 'to-blue-500');
                     btn.classList.add('bg-green-600');
-                    status.classList.remove('hidden', 'text-red-400');
+                    status.classList.remove('hidden');
+                    status.classList.remove('text-red-400');
                     status.classList.add('text-green-400', 'block');
                     status.innerText = "Thanks! I'll get back to you shortly.";
                     document.getElementById('contact-form').reset();
                     lucide.createIcons();
+
+                    // Optional: log full response (useful for debugging)
+                    console.log("EmailJS Response:", response);
                 }, function(error) {
+                    // Failure UI
                     btn.innerHTML = originalBtnContent;
                     btn.disabled = false;
-                    status.innerText = "Failed to send. Please check your IDs.";
                     status.classList.remove('hidden');
                     status.classList.add('text-red-400');
-                    console.log('FAILED...', error);
+                    status.innerText = "Failed to send. Please check your IDs and template.";
+                    console.log('EmailJS FAILED...', error);
                 });
         });
     </script>
