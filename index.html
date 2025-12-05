@@ -5,57 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robin M P | DevOps Engineer</title>
     <meta name="description" content="Portfolio of Robin M P - DevOps Engineer & Cloud Enthusiast.">
-    
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <style>
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
 
+        /* Background grid */
         .bg-grid-pattern {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 30px 30px;
         }
 
+        /* Cursor blink */
         .cursor-blink { animation: blink 1s step-end infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        @keyframes blink { 0%,100% {opacity:1;} 50% {opacity:0;} }
 
-        .loader {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #3b82f6;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .glass-nav {
-            backdrop-filter: blur(10px);
-            background-color: rgba(15,23,42,0.8);
-        }
+        /* Loader */
+        .loader { border:3px solid #f3f3f3; border-top:3px solid #3b82f6; border-radius:50%; width:20px; height:20px; animation:spin 1s linear infinite;}
+        @keyframes spin {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
     </style>
 </head>
 <body class="bg-slate-950 text-slate-200 font-sans antialiased overflow-x-hidden relative">
 
+    <!-- Background -->
     <div class="fixed inset-0 z-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
     </div>
 
+    <!-- Navbar -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <a href="#" class="flex-shrink-0 font-bold text-2xl text-blue-400 tracking-tighter cursor-pointer hover:scale-105 transition-transform">
+                <div class="flex-shrink-0 font-bold text-2xl text-blue-400 tracking-tighter cursor-pointer hover:scale-105 transition-transform" onclick="window.scrollTo(0,0)">
                     ROBIN<span class="text-white">MP</span>
-                </a>
+                </div>
+
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="text-slate-300 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all hover:-translate-y-1">Home</a>
@@ -65,6 +62,7 @@
                         <a href="#contact" class="bg-blue-600 text-white hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-blue-500/50">Hire Me</a>
                     </div>
                 </div>
+
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-slate-400 hover:text-white p-2">
                         <i data-lucide="menu" class="h-6 w-6"></i>
@@ -72,6 +70,7 @@
                 </div>
             </div>
         </div>
+
         <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 backdrop-blur-xl absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Home</a>
@@ -84,6 +83,7 @@
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+
             <div data-aos="fade-right" data-aos-duration="1000">
                 <div class="inline-flex items-center px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8">
                     <span class="relative flex h-3 w-3 mr-3">
@@ -92,21 +92,26 @@
                     </span>
                     Day 1 Ready Engineer
                 </div>
+
                 <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                     I am a <br/>
-                    <span id="typing-text" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"></span>
+                    <span id="typing-text" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">DevOps Engineer</span>
                     <span class="cursor-blink text-white">|</span>
                 </h1>
+
                 <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
                     Bridging the gap between writing code and deploying it at scale. 
                     I transform manual processes into automated pipelines using AWS, Docker, and Jenkins.
                 </p>
+
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="px-8 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all hover:scale-105 shadow-lg shadow-blue-600/25 flex items-center justify-center gap-2">
-                        <i data-lucide="send" class="w-5 h-5"></i> Send Feedback
+                    <a href="#contact" class="px-8 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Send Feedback
                     </a>
-                    <a href="ROBIN%202025%20DevOps%20Resume%20(1).pdf" target="_blank" class="px-8 py-4 rounded-xl bg-slate-800 text-white font-semibold hover:bg-slate-700 border border-slate-700 transition-all hover:scale-105 flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i> Download Resume
+                    <a href="ROBIN 2025 Cloud Resume.pdf" target="_blank" class="px-8 py-4 rounded-xl bg-slate-800 text-white font-semibold hover:bg-slate-700 border border-slate-700 transition-all hover:scale-105 flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Resume
                     </a>
                 </div>
             </div>
@@ -117,10 +122,12 @@
 
                 <div class="relative w-[400px] h-[500px] mx-auto transform rotate-3 hover:rotate-0 transition-all duration-500 ease-out group">
                     <div class="absolute inset-0 bg-gradient-to-tr from-slate-800 to-slate-900 rounded-2xl transform translate-x-4 translate-y-4 -z-10 border border-slate-700"></div>
+
                     <div class="relative w-full h-full rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
                         <img src="assets/robin.jpg" alt="Robin M P" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
                     </div>
+
                     <div class="absolute -left-6 bottom-12 bg-slate-800/90 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-xl" data-aos="fade-right" data-aos-delay="400">
                         <div class="flex items-center gap-3">
                             <div class="p-2 bg-blue-500/20 rounded-lg">
@@ -132,11 +139,13 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="absolute -right-4 top-12 bg-slate-800/90 backdrop-blur-md p-3 rounded-xl border border-slate-700 shadow-xl animate-bounce" style="animation-duration: 4s;">
                         <i data-lucide="container" class="w-8 h-8 text-emerald-400"></i>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -172,6 +181,7 @@
     <section id="skills" class="py-20 bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Technical Arsenal</h2>
+
             <div class="grid md:grid-cols-2 gap-12">
                 <div data-aos="fade-right">
                     <h3 class="text-xl font-semibold text-blue-400 mb-6 flex items-center gap-2">
@@ -207,6 +217,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div data-aos="fade-left">
                     <h3 class="text-xl font-semibold text-emerald-400 mb-6 flex items-center gap-2">
                         <i data-lucide="code" class="w-5 h-5"></i> Development
@@ -245,86 +256,65 @@
         </div>
     </section>
 
-    <!-- Projects & Contact Sections -->
-    <!-- Skipped here for brevity, would include same as your original code but fixed EmailJS, PDF link, skill animation -->
-
+    <!-- Footer -->
     <footer class="py-8 text-center text-slate-600 text-sm">
         <p>© 2025 Robin M P. Built with automation in mind.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true });
+        // Lucide icons
+        lucide.createIcons();
+        // AOS
+        AOS.init({ once:true });
 
-        // Navbar scroll effect
+        // Navbar scroll effect and skill bar animation
         const navbar = document.getElementById('navbar');
         let skillsAnimated = false;
 
         window.addEventListener('scroll', () => {
             if(window.scrollY > 20){
-                navbar.classList.add('glass-nav','shadow-lg');
-                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('glass-nav','bg-slate-900/90','shadow-lg');
             } else {
-                navbar.classList.remove('glass-nav','shadow-lg');
-                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('glass-nav','bg-slate-900/90','shadow-lg');
             }
 
-            // Skills animation
+            // Animate skill bars
             const skillsSection = document.getElementById('skills');
-            const rect = skillsSection.getBoundingClientRect();
-            if(!skillsAnimated && rect.top < window.innerHeight && rect.bottom >= 0){
+            if(!skillsAnimated && skillsSection.getBoundingClientRect().top < window.innerHeight){
                 document.querySelectorAll('.skill-bar').forEach(bar => {
-                    bar.style.width = bar.dataset.width;
-                    bar.style.transition = 'width 1.5s ease-out';
+                    bar.style.width = bar.getAttribute('data-width');
                 });
                 skillsAnimated = true;
             }
         });
 
         // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
 
         // Typing effect
-        const words = ["DevOps Engineer", "Cloud Enthusiast", "Automation Specialist"];
-        let i=0, j=0, currentWord="", isDeleting=false;
-        function type(){
-            const typingText = document.getElementById('typing-text');
-            if(!isDeleting){
-                currentWord = words[i].substring(0, j+1);
-                typingText.textContent = currentWord;
-                j++;
-                if(j === words[i].length) { isDeleting=true; setTimeout(type, 1500); return; }
+        const typingText = document.getElementById('typing-text');
+        const phrases = ['DevOps Engineer', 'Cloud Enthusiast', 'Automation Expert'];
+        let i=0, j=0, currentPhrase='', isDeleting=false;
+        function type() {
+            if(i >= phrases.length) i=0;
+            currentPhrase = phrases[i];
+            typingText.textContent = currentPhrase.substring(0,j);
+            if(!isDeleting) {
+                if(j<currentPhrase.length) j++;
+                else { isDeleting=true; setTimeout(type,1000); return; }
             } else {
-                currentWord = words[i].substring(0, j-1);
-                typingText.textContent = currentWord;
-                j--;
-                if(j===0){ isDeleting=false; i=(i+1)%words.length; }
+                if(j>0) j--;
+                else { isDeleting=false; i++; setTimeout(type,500); return; }
             }
-            setTimeout(type, isDeleting?100:150);
+            setTimeout(type,100);
         }
         type();
-
-        // EmailJS init
-        emailjs.init("YOUR_USER_ID_HERE"); // replace with your EmailJS user ID
-
-        // Fill time field before sending
-        const contactForm = document.getElementById('contact-form');
-        if(contactForm){
-            contactForm.addEventListener('submit', function(e){
-                e.preventDefault();
-                this.querySelector('input[name="time"]').value = new Date().toLocaleString();
-                emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',this)
-                    .then(() => alert("Message sent!"), (err) => alert("Error: "+err.text));
-                this.reset();
-            });
-        }
     </script>
 </body>
 </html>
