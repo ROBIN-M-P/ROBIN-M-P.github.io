@@ -1,247 +1,265 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robin M P | DevOps Engineer</title>
-    <meta name="description" content="Portfolio of Robin M P - DevOps Engineer & Cloud Enthusiast.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
-<body class="bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-blue-500/30">
+<body class="bg-[#111216] text-slate-300 font-sans antialiased overflow-hidden selection:bg-blue-500/30">
 
-    <div class="fixed inset-0 z-0 bg-grid opacity-20 pointer-events-none"></div>
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div class="absolute top-[20%] left-[10%] w-[30%] h-[30%] bg-blue-600/10 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-[20%] right-[10%] w-[30%] h-[30%] bg-purple-600/10 rounded-full blur-[100px]"></div>
-    </div>
-
-    <nav class="fixed w-full z-50 top-0 start-0 border-b border-white/5 bg-neutral-950/70 backdrop-blur-md">
-        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between p-4">
-            <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
-                <span class="self-center text-xl font-bold whitespace-nowrap text-white tracking-tighter">ROBIN<span class="text-blue-500">.</span></span>
-            </a>
-            <div class="hidden md:block">
-                <ul class="font-medium flex flex-row space-x-8">
-                    <li><a href="#about" class="block py-2 px-3 text-neutral-400 hover:text-white transition-colors">About</a></li>
-                    <li><a href="#projects" class="block py-2 px-3 text-neutral-400 hover:text-white transition-colors">Projects</a></li>
-                    <li><a href="#experience" class="block py-2 px-3 text-neutral-400 hover:text-white transition-colors">Timeline</a></li>
-                    <li><a href="#contact" class="block py-2 px-3 text-blue-400 hover:text-blue-300 transition-colors">Contact</a></li>
-                </ul>
+    <div class="flex h-screen w-full max-w-[1600px] mx-auto p-4 md:p-6 gap-6">
+        
+        <aside class="hidden md:flex flex-col w-28 bg-[#1D1E24] rounded-[30px] py-8 items-center justify-between shadow-2xl z-20 shrink-0">
+            <div class="w-12 h-12 bg-blue-600/20 text-blue-500 rounded-xl flex items-center justify-center font-bold text-xl">
+                R
             </div>
-            <button id="mobile-menu-btn" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-400 rounded-lg md:hidden hover:bg-neutral-800 focus:outline-none">
-                <i data-lucide="menu"></i>
+
+            <nav class="flex flex-col gap-6 w-full px-4">
+                <button onclick="switchTab('about')" class="nav-btn active group">
+                    <div class="icon-box">
+                        <i data-lucide="user" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-medium mt-1 group-hover:text-white transition-colors">About</span>
+                </button>
+
+                <button onclick="switchTab('resume')" class="nav-btn group">
+                    <div class="icon-box">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-medium mt-1 group-hover:text-white transition-colors">Resume</span>
+                </button>
+
+                <button onclick="switchTab('portfolio')" class="nav-btn group">
+                    <div class="icon-box">
+                        <i data-lucide="box" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-medium mt-1 group-hover:text-white transition-colors">Portfolio</span>
+                </button>
+
+                <button onclick="switchTab('contact')" class="nav-btn group">
+                    <div class="icon-box">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-medium mt-1 group-hover:text-white transition-colors">Contact</span>
+                </button>
+            </nav>
+
+            <div class="text-slate-600">
+                <i data-lucide="settings-2" class="w-6 h-6"></i>
+            </div>
+        </aside>
+
+        <div class="md:hidden fixed bottom-0 left-0 w-full bg-[#1D1E24] p-4 flex justify-around z-50 border-t border-white/5">
+             <button onclick="switchTab('about')" class="flex flex-col items-center gap-1 text-slate-400 focus:text-blue-500">
+                <i data-lucide="user" class="w-5 h-5"></i>
+                <span class="text-[10px]">About</span>
+            </button>
+            <button onclick="switchTab('portfolio')" class="flex flex-col items-center gap-1 text-slate-400 focus:text-blue-500">
+                <i data-lucide="box" class="w-5 h-5"></i>
+                <span class="text-[10px]">Work</span>
+            </button>
+            <button onclick="switchTab('contact')" class="flex flex-col items-center gap-1 text-slate-400 focus:text-blue-500">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                <span class="text-[10px]">Contact</span>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-neutral-950 border-b border-white/5">
-            <ul class="flex flex-col p-4 font-medium">
-                <li><a href="#about" class="block py-2 px-3 text-neutral-400 hover:text-white">About</a></li>
-                <li><a href="#projects" class="block py-2 px-3 text-neutral-400 hover:text-white">Projects</a></li>
-                <li><a href="#contact" class="block py-2 px-3 text-blue-400">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <main class="max-w-5xl mx-auto px-4 pt-32 pb-20">
-        
-        <section class="mb-20">
-            <div class="flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
-                <div class="flex-1">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-                        DevOps Engineer <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Day 1 Ready.</span>
-                    </h1>
-                    <p class="text-lg text-neutral-400 mb-6 max-w-xl leading-relaxed">
-                        Hi, I'm <strong class="text-white">Robin M P</strong>. I bridge the gap between writing code and deploying it. [cite_start]MCA Graduate specializing in AWS, Docker, and CI/CD automation[cite: 20, 23].
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#contact" class="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-neutral-200 transition-colors">
-                            Hire Me
-                        </a>
-                        <a href="Profile (2).pdf" target="_blank" class="px-6 py-3 border border-white/10 bg-white/5 text-white font-medium rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2">
-                            <i data-lucide="download" class="w-4 h-4"></i> Resume
-                        </a>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/3">
-                    <div class="bg-neutral-900 border border-white/10 rounded-xl p-4 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <div class="flex gap-2 mb-4">
-                            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-                        </div>
-                        <div class="font-mono text-xs text-neutral-400 space-y-2">
-                            <p><span class="text-purple-400">const</span> <span class="text-blue-400">engineer</span> = {</p>
-                            <p class="pl-4">name: <span class="text-green-400">'Robin'</span>,</p>
-                            <p class="pl-4">focus: <span class="text-green-400">'DevOps'</span>,</p>
-                            <p class="pl-4">tools: [<span class="text-green-400">'AWS'</span>, <span class="text-green-400">'Docker'</span>, <span class="text-green-400">'K8s'</span>],</p>
-                            <p class="pl-4">status: <span class="text-green-400">'Ready to Deploy'</span></p>
-                            <p>};</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="mb-24">
-            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="layout-grid" class="w-5 h-5 text-blue-400"></i> Overview</h2>
+        <main class="flex-1 flex flex-col gap-6 overflow-hidden relative">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <header class="bg-[#1D1E24] rounded-[30px] p-6 md:p-10 shadow-lg shrink-0 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
                 
-                <div class="md:col-span-2 row-span-2 spotlight-card rounded-2xl p-8 bg-neutral-900/50 border border-white/5 relative group">
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white/10">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6 relative z-10">
+                    <div class="relative">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-blue-500 to-purple-600">
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-[#1D1E24]">
                                 <img src="assets/robin.jpg" alt="Robin" class="w-full h-full object-cover">
                             </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white">Robin M P</h3>
-                                <p class="text-sm text-neutral-400">MCA Graduate '25 | Bengaluru</p>
+                        </div>
+                        <div class="absolute bottom-2 right-2 w-8 h-8 bg-[#1D1E24] rounded-full flex items-center justify-center">
+                            <div class="w-4 h-4 bg-green-500 rounded-full border-2 border-[#1D1E24] animate-pulse"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 text-center md:text-left">
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Robin M P</h1>
+                        <p class="text-blue-400 font-medium mb-4">DevOps Engineer & Cloud Enthusiast</p>
+                        
+                        <div class="flex items-center justify-center md:justify-start gap-4 mb-6">
+                            <a href="#" class="social-icon"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            <a href="#" class="social-icon"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                            <a href="#" class="social-icon"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="hidden lg:flex flex-col gap-4 text-sm border-l border-white/5 pl-8 min-w-[200px]">
+                        <div>
+                            <span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Email</span>
+                            <a href="mailto:robinpolymp@gmail.com" class="text-white hover:text-blue-400 transition-colors">robinpolymp@gmail.com</a>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Location</span>
+                            <span class="text-white flex items-center gap-2">Bengaluru, IN <i data-lucide="map-pin" class="w-3 h-3 text-red-500"></i></span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">CV / Resume</span>
+                            <a href="Profile (2).pdf" target="_blank" class="text-blue-400 hover:text-blue-300 flex items-center gap-1">Download <i data-lucide="download" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+                
+                <section id="about" class="tab-content active space-y-6">
+                    <div class="bg-[#1D1E24] rounded-[30px] p-8 shadow-lg">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-2 h-8 bg-blue-500 rounded-full"></div>
+                            <h2 class="text-2xl font-bold text-white">About Me</h2>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            I am an <strong class="text-white">MCA Graduate (2025)</strong> from Bangalore Institute of Technology with an 8.6 CGPA. I bridge the gap between writing code and deploying it at scale. My focus is on transforming manual processes into automated pipelines using AWS, Docker, and Jenkins.
+                        </p>
+                        <p class="text-slate-400 leading-relaxed">
+                            Currently, I am focused on mastering Kubernetes and Terraform to become a complete Cloud Native Engineer. I am "Day 1 Ready" to contribute to production-grade systems.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-[#1D1E24] rounded-[30px] p-8 shadow-lg border border-transparent hover:border-blue-500/20 transition-all">
+                            <i data-lucide="cloud" class="w-10 h-10 text-blue-500 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Cloud Infrastructure</h3>
+                            <p class="text-sm text-slate-400">Deploying and managing scalable applications on AWS (EC2, S3, Lambda) with a focus on cost optimization.</p>
+                        </div>
+                        <div class="bg-[#1D1E24] rounded-[30px] p-8 shadow-lg border border-transparent hover:border-purple-500/20 transition-all">
+                            <i data-lucide="container" class="w-10 h-10 text-purple-500 mb-4"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">CI/CD Automation</h3>
+                            <p class="text-sm text-slate-400">Building robust pipelines using Jenkins, Docker, and GitHub Actions to ensure smooth delivery.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="resume" class="tab-content hidden space-y-6">
+                    <div class="bg-[#1D1E24] rounded-[30px] p-8 shadow-lg">
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="w-2 h-8 bg-orange-500 rounded-full"></div>
+                            <h2 class="text-2xl font-bold text-white">Education & Experience</h2>
+                        </div>
+
+                        <div class="space-y-8 relative pl-8 border-l border-white/10">
+                            <div class="relative">
+                                <div class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#1D1E24]"></div>
+                                <span class="text-xs font-mono text-blue-400 mb-1 block">2024 - 2025</span>
+                                <h3 class="text-lg font-bold text-white">Master of Computer Applications</h3>
+                                <p class="text-sm text-slate-400">Bangalore Institute of Technology</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#1D1E24]"></div>
+                                <span class="text-xs font-mono text-slate-500 mb-1 block">2020 - 2023</span>
+                                <h3 class="text-lg font-bold text-white">Bachelor of Computer Applications</h3>
+                                <p class="text-sm text-slate-400">S.R.N.M. National College</p>
                             </div>
                         </div>
-                        <p class="text-neutral-400 leading-relaxed mb-4">
-                            I don't just "maintain" servers; I optimize them. With an 8.6 CGPA from Bangalore Institute of Technology, I focus on building scalable Cloud Infrastructure. [cite_start]I have architected automated pipelines for apps like 'Zomato Clone' and 'Retinal AI'[cite: 23, 28, 30].
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">AWS Certified Practitioner (Pursuing)</span>
-                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full border border-green-500/20">92% AI Accuracy Project</span>
+                    </div>
+
+                    <div class="bg-[#1D1E24] rounded-[30px] p-8 shadow-lg">
+                        <h3 class="text-xl font-bold text-white mb-6">Technical Skills</h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between text-sm mb-2"><span class="text-white">AWS & Cloud</span><span class="text-blue-400">85%</span></div>
+                                <div class="h-2 bg-black/50 rounded-full overflow-hidden"><div class="h-full bg-blue-500 w-[85%]"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2"><span class="text-white">Docker & K8s</span><span class="text-purple-400">75%</span></div>
+                                <div class="h-2 bg-black/50 rounded-full overflow-hidden"><div class="h-full bg-purple-500 w-[75%]"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2"><span class="text-white">Python & Scripting</span><span class="text-green-400">80%</span></div>
+                                <div class="h-2 bg-black/50 rounded-full overflow-hidden"><div class="h-full bg-green-500 w-[80%]"></div></div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 flex flex-col justify-center">
-                    <h3 class="text-lg font-bold text-white mb-4">Stack</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <i data-lucide="cloud" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
-                        <i data-lucide="container" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
-                        <i data-lucide="terminal" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
-                        <i data-lucide="database" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
-                        <i data-lucide="code-2" class="w-8 h-8 p-1.5 bg-neutral-800 rounded text-neutral-300"></i>
+                <section id="portfolio" class="tab-content hidden space-y-6">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-bold text-white">Portfolio</h2>
+                        <div class="flex gap-2 text-xs font-medium">
+                            <span class="text-blue-400 cursor-pointer">All</span>
+                            <span class="text-slate-500 hover:text-white cursor-pointer transition-colors">DevOps</span>
+                            <span class="text-slate-500 hover:text-white cursor-pointer transition-colors">AI/ML</span>
+                        </div>
                     </div>
-                    <p class="mt-4 text-xs text-neutral-500">AWS, Docker, Jenkins, Python, Linux</p>
-                </div>
 
-                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg font-bold text-white mb-1">Let's Connect</h3>
-                        [cite_start]<p class="text-xs text-neutral-400">Bengaluru, India [cite: 21]</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <div class="bg-[#1D1E24] rounded-[24px] overflow-hidden group border border-white/5 hover:border-blue-500/30 transition-all">
+                            <div class="h-40 bg-gradient-to-br from-blue-900/40 to-slate-900 relative p-6 flex flex-col justify-between">
+                                <span class="bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-md self-start">DevOps</span>
+                                <i data-lucide="server" class="text-blue-400 w-10 h-10"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-white mb-2">Zomato Clone Pipeline</h3>
+                                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Automated CI/CD pipeline using Docker, Jenkins, and AWS EC2 for zero-downtime deployment.</p>
+                                <a href="#" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-1">View Project <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#1D1E24] rounded-[24px] overflow-hidden group border border-white/5 hover:border-purple-500/30 transition-all">
+                            <div class="h-40 bg-gradient-to-br from-purple-900/40 to-slate-900 relative p-6 flex flex-col justify-between">
+                                <span class="bg-purple-500 text-white text-[10px] font-bold px-2 py-1 rounded-md self-start">Cloud</span>
+                                <i data-lucide="zap" class="text-purple-400 w-10 h-10"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-white mb-2">Serverless Image Processor</h3>
+                                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Event-driven architecture using AWS Lambda and S3 to resize images automatically.</p>
+                                <a href="#" class="text-xs font-bold text-purple-400 hover:text-white flex items-center gap-1">View Project <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#1D1E24] rounded-[24px] overflow-hidden group border border-white/5 hover:border-emerald-500/30 transition-all">
+                            <div class="h-40 bg-gradient-to-br from-emerald-900/40 to-slate-900 relative p-6 flex flex-col justify-between">
+                                <span class="bg-emerald-500 text-white text-[10px] font-bold px-2 py-1 rounded-md self-start">AI</span>
+                                <i data-lucide="eye" class="text-emerald-400 w-10 h-10"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-white mb-2">Retinal Disease AI</h3>
+                                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Disease detection web app with 92% accuracy using Gemini API and Python.</p>
+                                <a href="#" class="text-xs font-bold text-emerald-400 hover:text-white flex items-center gap-1">View Project <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="flex gap-3 mt-4">
-                        <a href="https://linkedin.com/in/robinmp" target="_blank" class="p-2 bg-white/5 rounded-lg hover:bg-blue-600 hover:text-white transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                        <a href="https://github.com/robin-m-p" target="_blank" class="p-2 bg-white/5 rounded-lg hover:bg-neutral-700 hover:text-white transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
-                        <a href="mailto:robinpolymp@gmail.com" class="p-2 bg-white/5 rounded-lg hover:bg-red-500 hover:text-white transition-all"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                </section>
+
+                <section id="contact" class="tab-content hidden space-y-6">
+                    <div class="bg-[#1D1E24] rounded-[30px] p-8 shadow-lg">
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="w-2 h-8 bg-green-500 rounded-full"></div>
+                            <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
+                        </div>
+
+                        <form class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Full Name" class="w-full bg-black/20 border border-white/5 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500 transition-colors">
+                                <input type="email" placeholder="Email Address" class="w-full bg-black/20 border border-white/5 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500 transition-colors">
+                            </div>
+                            <textarea rows="5" placeholder="Your Message" class="w-full bg-black/20 border border-white/5 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500 transition-colors"></textarea>
+                            <button class="bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-lg hover:shadow-green-500/20 transition-all transform hover:-translate-y-1">Send Message</button>
+                        </form>
                     </div>
-                </div>
+                </section>
+
             </div>
-        </section>
+        </main>
+    </div>
 
-        <section id="projects" class="mb-24">
-            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="folder-git-2" class="w-5 h-5 text-purple-400"></i> Featured Projects</h2>
-            
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-2 bg-neutral-800 rounded-lg"><i data-lucide="server" class="w-6 h-6 text-blue-400"></i></div>
-                        <span class="text-xs font-mono text-neutral-500">DEVOPS</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Zomato Clone Pipeline</h3>
-                    <p class="text-sm text-neutral-400 mb-4">
-                        Architected a fully automated CI/CD pipeline using Docker, Jenkins, and GitHub Actions. [cite_start]Deployed final build to AWS EC2[cite: 28].
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Docker</span>
-                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">AWS EC2</span>
-                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Jenkins</span>
-                    </div>
-                </div>
-
-                <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 group">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-2 bg-neutral-800 rounded-lg"><i data-lucide="zap" class="w-6 h-6 text-yellow-400"></i></div>
-                        <span class="text-xs font-mono text-neutral-500">CLOUD</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Serverless Image Processing</h3>
-                    <p class="text-sm text-neutral-400 mb-4">
-                        Event-driven pipeline using AWS Lambda and S3. [cite_start]Python handlers optimize storage and processing costs automatically[cite: 29].
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Lambda</span>
-                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">S3</span>
-                        <span class="px-2 py-1 bg-neutral-800 rounded text-neutral-300">Python</span>
-                    </div>
-                </div>
-
-                 <div class="spotlight-card rounded-2xl p-6 bg-neutral-900/50 border border-white/5 group md:col-span-2">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-2 bg-neutral-800 rounded-lg"><i data-lucide="eye" class="w-6 h-6 text-emerald-400"></i></div>
-                        <span class="text-xs font-mono text-neutral-500">AI / ML</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Retinal Disease Detection</h3>
-                    <p class="text-sm text-neutral-400 mb-4">
-                        Full-stack web app integrating Gemini 1.5 API for diagnosis. Achieved 92.37% accuracy. [cite_start]Published in IJSREM[cite: 30].
-                    </p>
-                    <a href="https://ijsrem.com/download/automated-retinal-disease-detection-and-classification-using-ai/" target="_blank" class="text-sm text-emerald-400 hover:underline flex items-center gap-1">Read Publication <i data-lucide="external-link" class="w-3 h-3"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="mb-24">
-            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="history" class="w-5 h-5 text-gray-400"></i> Education Journey</h2>
-            
-            <div class="border-l border-white/10 ml-3 space-y-8">
-                <div class="relative pl-8">
-                    <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-blue-500"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-neutral-500">Feb 2024 - Nov 2025</time>
-                    <h3 class="text-lg font-semibold text-white mt-1">Master of Computer Applications</h3>
-                    <p class="text-neutral-400 text-sm">Bangalore Institute of Technology | [cite_start]8.6 CGPA [cite: 38, 39, 24]</p>
-                </div>
-                <div class="relative pl-8">
-                    <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-neutral-700"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-neutral-500">Apr 2020 - Sep 2023</time>
-                    <h3 class="text-lg font-semibold text-white mt-1">Bachelor of Computer Applications</h3>
-                    <p class="text-neutral-400 text-sm">S.R.N.M. [cite_start]National College, Shivamogga [cite: 40, 41]</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="max-w-2xl mx-auto">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
-                <p class="text-neutral-400">Send me a message for collaborations.</p>
-            </div>
-
-            <form id="contact-form" class="space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" name="name" placeholder="Name" required class="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors">
-                </div>
-                <textarea name="message" rows="4" placeholder="Message" required class="w-full bg-neutral-900 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"></textarea>
-                
-                <input type="hidden" name="title" value="Contact Form">
-                <input type="hidden" name="time" value="">
-
-                <button type="submit" id="submit-btn" class="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-neutral-200 transition-colors flex justify-center items-center gap-2">
-                    Send Message <i data-lucide="send" class="w-4 h-4"></i>
-                </button>
-                <div id="status-msg" class="text-center text-sm mt-2 hidden"></div>
-            </form>
-        </section>
-
-    </main>
-
-    <footer class="border-t border-white/5 py-8 text-center text-neutral-500 text-sm">
-        <p>&copy; 2025 Robin M P. Built with clean code.</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
